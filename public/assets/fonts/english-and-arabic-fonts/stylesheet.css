@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Janna LT';
+    src: url('/assets/fonts/english-and-arabic-fonts/JannaLT-Regular.eot');
+    src: url('/assets/fonts/english-and-arabic-fonts/JannaLT-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Regular.woff2') format('woff2'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Regular.woff') format('woff'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Regular.ttf') format('truetype'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Regular.svg#JannaLT-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Janna LTBold';
+    src: url('/assets/fonts/english-and-arabic-fonts/JannaLT-Bold.eot');
+    src: url('/assets/fonts/english-and-arabic-fonts/JannaLT-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Bold.woff2') format('woff2'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Bold.woff') format('woff'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Bold.ttf') format('truetype'),
+        url('/assets/fonts/english-and-arabic-fonts/JannaLT-Bold.svg#JannaLT-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Adobe Arabic';
+    src: url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Bold.eot');
+    src: url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Bold.woff2') format('woff2'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Bold.woff') format('woff'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Bold.ttf') format('truetype'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Bold.svg#AdobeArabic-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Adobe Arabic';
+    src: url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Regular.eot');
+    src: url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Regular.woff2') format('woff2'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Regular.woff') format('woff'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Regular.ttf') format('truetype'),
+        url('/assets/fonts/english-and-arabic-fonts/AdobeArabic-Regular.svg#AdobeArabic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
