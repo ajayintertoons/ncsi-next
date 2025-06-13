@@ -270,7 +270,7 @@ p._breadcrumb-header {
 
 @media (min-width: 768px) {
   .container-survey {
-    max-width: 720px;
+    max-width: 720px !important;
   }
 
   .ListPage {
@@ -295,3 +295,38 @@ p._breadcrumb-header {
     padding-left: 15px;
   }
 }
+
+
+/* population page */
+
+
+.container-population {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 1200px) {
+  .container-population {
+    max-width: 1170px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container-population {
+    max-width: 960px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container-population {
+    max-width: 720px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container-population {
+    max-width: 540px;
+  }
+}
+/* Optional: mobile below 576px can be 100% width */

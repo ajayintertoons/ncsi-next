@@ -583,7 +583,7 @@ h4.Htitel {margin:35px 0;}
 #s4-workspace {overflow-x:hidden;}
 #divEnglishContnet, #divArabicContnet, .divArabicContnet , .divEnglishContnet {position:relative;display:none; z-index:90;}
 /*.ms-rtestate-field img {width:450px;height: 295px;margin: 0 10px 10px 0;}*/
-.ms-rtestate-field p {font-family: Gill Sans MT, Arial; font-size: 14px; color: #3a372a; text-align: justify; line-height: 21px;margin: 5px 0 !important;}
+.ms-rtestate-field p {font-family: "GillSansMT", Arial; font-size: 14px; color: #3a372a; text-align: justify; line-height: 21px;margin: 5px 0 !important;}
 .ms-socialCommentContents {font: 12px Gill Sans MT, Arial;}
 .ms-signInLink {display:none !important;}
 
