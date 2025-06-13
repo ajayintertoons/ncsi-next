@@ -1,6 +1,6 @@
 {
   "login": "Login",
-  "login_here": "Login Here",
+  "login_here": "Login",
   "contact": "Contact",
   "contact_ceo": "Contact CEO",
   "search": "Search",
@@ -35,7 +35,6 @@
   "Load More Events": "Load More Events",
   "loading": "Loading...",
   
-  "contact_us": "Contact us",
   "name": "Name",
   "email": "Email",
   "subject": "Subject",
@@ -102,6 +101,7 @@
 
   "invalid_email": "Invalid email address, please enter a valid email address.",
   "invalid_phone_number":"Invalid phone number",
+  "invalid_date":"Invalid date, please enter a valid date.",
 
   "unsupported_file_format": "Unsupported file format",
    "sample_size_must_be_number": "Sample size must be a number",
@@ -111,8 +111,8 @@
   "downloaded":"Downloaded",
   "most_viewed": "الكتب الأكثر مشاهدة",
   
-  "Mandatory field": "Mandatory field",
-  "Invalid Email": "Invalid Email",
+  "mandatory_field": "* Mandatory field",
+  "invalid_email_contactus": "Invalid Email",
   "captcha_validation_failed" : "Invalid Code",
   "Event Speaker": "Event Speaker",
   "Event Location": "Event Location",
@@ -139,7 +139,7 @@
   "Jun": "Jun",
   "Jul": "Jul",
   "Aug": "Aug",
-  "Sep": "Sep",
+  "Sept": "Sep",
   "Oct": "Oct",
   "Nov": "Nov",
   "Dec": "Dec",
@@ -160,35 +160,35 @@
   
   
   
-  "Statistics": "Statistics",
-  "Infographic": "Infographic",
-  "Media Gallery": "Media Gallery",
-  "Polls": "Polls",
+  "statistics": "Statistics",
+  "infographic": "Infographic",
+  "media_gallery": "Media Gallery",
+  "polls": "Polls",
   
-  "Classifications": "Classifications",
-  "Methodologies": "Methodologies",
-  "News": "News",
-  "Press Release": "Press Release",
+  "classifications": "Classifications",
+  "methodologies": "Methodologies",
+  "news": "News",
+  "press_release": "Press Release",
   
-  "Service Directory": "Service Directory",
-  "Glossary of Statistics": "Glossary of Statistics",
-  "E-Survey": "E-Survey",
-  "Mobile applications": "Mobile applications",
+  "service_directory": "Service Directory",
+  "glossary_of_statistics": "Glossary of Statistics",
+  "e_survey": "E-Survey",
+  "mobile_applications": "Mobile applications",
   
-  "Privacy policy": "Privacy policy",
-  "Terms of Use": "Terms of Use",
-  "Looking for information": "Looking for information",
-  "Request permission for surveys": "Request permission for surveys",
+  "privacy_policy": "Privacy policy",
+  "terms_of_use": "Terms of Use",
+  "looking_for_information": "Looking for information",
+  "request_permission_for_surveys": "Request permission for surveys",
   
-  "Site Map": "Site Map",
-  "Who are we": "Who are we",
-  "First visit": "First visit",
-  "FAQs": "FAQs",
+  "site_map": "Site Map",
+  "who_are_we": "Who are we",
+  "first_visit": "First visit",
+  "faqs": "FAQs",
   
-  "Contact Us": "Contact Us",
-  "Tajawob": "Tajawob",
-  "Important Links": "Important Links",
-  "Careers": "Careers",
+  "contact_us": "Contact Us",
+  "tajawob": "Tajawob",
+  "important_links": "Important Links",
+  "careers": "Careers",
   "footer_copyright": "© National Centre For Statistics & Information © 2025 - The content of this website is licensed under the Open Government License - Sultanate of Oman."
 
 }

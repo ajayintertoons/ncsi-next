@@ -2,7 +2,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import React, { useEffect, useState, useRef , useMemo} from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
 const ContactUs = () => {
@@ -19,14 +19,13 @@ const ContactUs = () => {
 
   const [captchaText, setCaptchaText] = useState("");
 
-  
-     const styledCaptcha = useMemo(() => {
-      return captchaText.split("").map((char) => ({
-        char,
-        y: Math.floor(Math.random() * 6) - 3,
-        rotate: Math.floor(Math.random() * 11) - 5,
-      }));
-    }, [captchaText]);
+  const styledCaptcha = useMemo(() => {
+    return captchaText.split("").map((char) => ({
+      char,
+      y: Math.floor(Math.random() * 6) - 3,
+      rotate: Math.floor(Math.random() * 11) - 5,
+    }));
+  }, [captchaText]);
 
   const fetchCaptcha = async () => {
     const res = await fetch("/api/generate-captcha");
@@ -77,16 +76,16 @@ const ContactUs = () => {
       captcha: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required(t("Mandatory field")),
+      name: Yup.string().required(t("mandatory_field")),
       email: Yup.string()
-        .email(t("Invalid Email"))
-        .required(t("Mandatory field")),
-      subject: Yup.string().required(t("Mandatory field")),
-      message: Yup.string().required(t("Mandatory field")),
-      captcha: Yup.string().required(t("Mandatory field")),
+        .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "invalid_email_contactus")
+        .required("mandatory_field"),
+      subject: Yup.string().required(t("mandatory_field")),
+      message: Yup.string().required(t("mandatory_field")),
+      captcha: Yup.string().required(t("mandatory_field")),
     }),
-    onSubmit: async (values, { setSubmitting, resetForm , setFieldError}) => {
-      setStatusMessage({ success: "", error: "" }); 
+    onSubmit: async (values, { setSubmitting, resetForm, setFieldError }) => {
+      setStatusMessage({ success: "", error: "" });
 
       try {
         // --- Client-side CAPTCHA Validation ---
@@ -107,7 +106,7 @@ const ContactUs = () => {
 
         if (values.captcha.toUpperCase() !== captchaText) {
           setFieldError("captcha", t("captcha_validation_failed")); // Set Formik error
-          fetchCaptcha(); 
+          fetchCaptcha();
           return; // Stop further execution
         }
 
@@ -143,7 +142,7 @@ const ContactUs = () => {
       } catch (err) {
         setStatusMessage({ success: "", error: err.message });
         fetchCaptcha();
-        // refreshCaptcha(); 
+        // refreshCaptcha();
       } finally {
         setSubmitting(false);
       }
@@ -295,22 +294,22 @@ const ContactUs = () => {
                           letterSpacing: "7px",
                           fontStyle: "italic",
                           backgroundImage:
-                              "url('/assets/images/captcha-bg.jpg')", // <-- fixed line
-                            backgroundSize: "cover", // optional: ensure full coverage
-                            backgroundRepeat: "no-repeat",
+                            "url('/assets/images/captcha-bg.jpg')", // <-- fixed line
+                          backgroundSize: "cover", // optional: ensure full coverage
+                          backgroundRepeat: "no-repeat",
                         }}
                       >
-                       {styledCaptcha.map((item, index) => (
-                            <span
-                              key={index}
-                              style={{
-                                transform: `translateY(${item.y}px) rotate(${item.rotate}deg)`,
-                                display: "inline-block",
-                              }}
-                            >
-                              {item.char}
-                            </span>
-                          ))}
+                        {styledCaptcha.map((item, index) => (
+                          <span
+                            key={index}
+                            style={{
+                              transform: `translateY(${item.y}px) rotate(${item.rotate}deg)`,
+                              display: "inline-block",
+                            }}
+                          >
+                            {item.char}
+                          </span>
+                        ))}
                       </div>
                     </div>
                     <input type="hidden" autoComplete="off" />
@@ -333,7 +332,10 @@ const ContactUs = () => {
               </div>
 
               <div className="form-group">
-                <div className="col-xs-12 col-sm-12 col-md-12 btnsWrapper">
+                <div
+                  className="col-xs-12 col-sm-12 col-md-12 btnsWrapper"
+                  style={{ marginTop: "20px" }}
+                >
                   <button className="submitBtn" type="submit" title="Send">
                     {t("send")}
                   </button>

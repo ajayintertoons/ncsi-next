@@ -524,6 +524,9 @@ margin-top: 15px;
 .home-copyright{
   padding: 10px;
 }
+[dir="rtl"] .home-copyright{
+  font-family: "GE_SS_Medium", Arial !important;
+}
 /*f055*/
 
 /*.paginator {

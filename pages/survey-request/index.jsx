@@ -273,7 +273,7 @@ const SurveyRequest = () => {
   const financialSponsors = useRef(null);
   const objectiveStudy = useRef(null);
   const otherAttachments = useRef(null);
-  
+
   const handleExportPDF = () => {
     console.log("Exporting to PDF...");
     const printContents = formRef.current.innerHTML;
@@ -333,7 +333,9 @@ const SurveyRequest = () => {
       institute: Yup.string().required("field_required"),
       contactPerson: Yup.string().required("field_required"),
       requester: Yup.string().required("field_required"),
-      email: Yup.string().email("invalid_email").required("field_required"),
+      email: Yup.string()
+        .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "invalid_email")
+        .required("field_required"),
       telephone: Yup.string()
         .required("field_required")
         .matches(/^968\d+$/, "invalid_phone_number"),
@@ -1252,7 +1254,7 @@ const SurveyRequest = () => {
                     type="file"
                     id="fu_Objec"
                     className="file_1 txtF"
-                     onChange={(e) => {
+                    onChange={(e) => {
                       const file = e.currentTarget.files[0];
                       formik.setFieldValue("studyObjective", file);
                     }}
@@ -1314,7 +1316,7 @@ const SurveyRequest = () => {
                     id="fu_StudyObjective"
                     className="file_1 txtF"
                     // onChange={handleStudyObjectiveChange}
-                     onChange={(e) => {
+                    onChange={(e) => {
                       const file = e.currentTarget.files[0];
                       formik.setFieldValue("sponsors", file);
                     }}
@@ -1337,12 +1339,12 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
-                  ref={listOfBenef}
+                    ref={listOfBenef}
                     type="file"
                     id="fu_OfficialLetter"
                     className="file_1 txtF"
                     // onChange={handleOfficialLetterChange}
-                     onChange={(e) => {
+                    onChange={(e) => {
                       const file = e.currentTarget.files[0];
                       formik.setFieldValue("beneficiaries", file);
                     }}
@@ -1368,12 +1370,12 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
-                  ref={otherAttachments}
+                    ref={otherAttachments}
                     type="file"
                     id="fu_StudyObjective"
                     className="file_1 txtF"
                     // onChange={handleStudyObjectiveChange}
-                     onChange={(e) => {
+                    onChange={(e) => {
                       const file = e.currentTarget.files[0];
                       formik.setFieldValue("attachments", file);
                     }}

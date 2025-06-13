@@ -20,12 +20,19 @@
     font-size: 17px;
     margin-top: 20px;
 }
+[dir="rtl"] .Work_hours h6 {
+    font-family: 'GE_SS_Medium', Arial !important;
+}
 
 .Work_hours > div {
     color: #333;
     padding: 0 20px;
     font-family: 'GE_SS_Light' !important;
     font-size: 10px;
+}
+[dir="rtl"] .Work_hours > div{
+    font-family: 'Janna LT', DroidKufiRegular !important;
+    /* font-family: "GE_SS_Medium", Arial !important; */
 }
 #map-canvas {
     height: 140px;

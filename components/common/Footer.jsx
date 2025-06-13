@@ -13,50 +13,50 @@ export default function Footer() {
                 <div class="row home-footer color-white">
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 footer-col-1 wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.5s">
                         <div class="footer-main">
-                            <span><a href="#">{t('Statistics')}</a></span><br />
-                            <span><a href="#">{t('Infographic')}</a></span><br />
-                            <span><a href="#">{t('Media Gallery')}</a></span><br />
-                            <span><a href="#">{t('Polls')}</a></span><br />
+                            <span><a href="#">{t('statistics')}</a></span><br />
+                            <span><a href="#">{t('infographic')}</a></span><br />
+                            <span><a href="#">{t('media_gallery')}</a></span><br />
+                            <span><a href="#">{t('polls')}</a></span><br />
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 wow fadeInLeft" data-wow-delay="0.5s" data-wow-duration="0.5s">
                         <div class="footer-main">
-                            <span><a href="#">{t('Classifications')}</a></span><br />
-                            <span><a href="#">{t('Methodologies')}</a></span><br />
-                            <span><a href="#">{t('News')}</a></span><br />
-                            <span><a href="#">{t('Press Release')}</a></span><br />
+                            <span><a href="#">{t('classifications')}</a></span><br />
+                            <span><a href="#">{t('methodologies')}</a></span><br />
+                            <span><a href="#">{t('news')}</a></span><br />
+                            <span><a href="#">{t('press_release')}</a></span><br />
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="0.5s">
                         <div class="footer-main">
-                            <span><a href="#">{t('Service Directory')}</a></span><br />
-                            <span><a href="#">{t('Glossary of Statistics')}</a></span><br />
-                            <span><a href="#">{t('E-Survey')}</a></span><br />
-                            <span><a href="#">{t('Mobile applications')}</a></span><br />
+                            <span><a href="#">{t('service_directory')}</a></span><br />
+                            <span><a href="#">{t('glossary_of_statistics')}</a></span><br />
+                            <span><a href="#">{t('e_survey')}</a></span><br />
+                            <span><a href="#">{t('mobile_applications')}</a></span><br />
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 wow fadeInLeft" data-wow-delay="0.7s" data-wow-duration="0.5s">
                         <div class="footer-main">
-                            <span><a href="#">{t('Privacy policy')}</a></span><br />
-                            <span><a href="#">{t('Terms of Use')}</a></span><br />
-                            <span><a href="#">{t('Looking for information')}</a></span><br />
-                            <span><a href={surveyUrl}>{t('Request permission for surveys')}</a></span><br />
+                            <span><a href="#">{t('privacy_policy')}</a></span><br />
+                            <span><a href="#">{t('terms_of_use')}</a></span><br />
+                            <span><a href="#">{t('looking_for_information')}</a></span><br />
+                            <span><a href={surveyUrl}>{t('request_permission_for_surveys')}</a></span><br />
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="0.5s">
                         <div class="footer-main">
-                            <span><a href="#">{t('Site Map')}</a></span><br />
-                            <span><a href="#">{t('Who are we')}</a></span><br />
-                            <span><a href="#">{t('First visit')}</a></span><br />
-                            <span><a href="#">{t('FAQs')}</a></span><br />
+                            <span><a href="#">{t('site_map')}</a></span><br />
+                            <span><a href="#">{t('who_are_we')}</a></span><br />
+                            <span><a href="#">{t('first_visit')}</a></span><br />
+                            <span><a href="#">{t('faqs')}</a></span><br />
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 wow fadeInLeft" data-wow-delay="0.9s" data-wow-duration="0.5s">
                         <div class="footer-main">
-                            <span><a href={contactUsUrl}>{t('Contact Us')}</a></span><br />
-                            <span><a href="#">{t('Tajawob')}</a></span><br />
-                            <span><a href="#">{t('Important Links')}</a></span><br />
-                            <span><a href="#" target="_blank">{t('Careers')}</a></span>
+                            <span><a href={contactUsUrl}>{t('contact_us')}</a></span><br />
+                            <span><a href="#">{t('tajawob')}</a></span><br />
+                            <span><a href="#">{t('important_links')}</a></span><br />
+                            <span><a href="#" target="_blank">{t('careers')}</a></span>
                             
                         </div>
                     </div>

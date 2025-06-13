@@ -550,7 +550,7 @@ a.disabled , .aspNetDisabled {pointer-events: none;cursor: default; opacity:0.4;
 
 .text_body{text-align: justify !important;display:inline-block !important;}
 .Froms label {margin:0 0 0 2px !important;  font: normal 14px Gill Sans MT, Arial;}
-[dir = 'rtl'] .Froms label {margin:0 2px 0 0px !important; font-family: 'Janna LT', DroidKufiRegular !important; font-weight: 900;}
+[dir = 'rtl'] .Froms label {margin:0 2px 0 0px !important; font-family: "GE_SS_Medium", Arial !important;}
 .Froms .Textform {margin: 0 0 10px 10px !important;}
 .Textform table label {font-size: 12px !important;font-weight: normal !important;}
 .lblsub {font-weight:bold;}
@@ -877,10 +877,14 @@ img.rsImg {width:891px !important;height:430px !important;margin-left: 0 !import
 
  /*-------------------------Contact Us---------------------------*/
 .Contactdetails {font-family: Gill Sans MT, Arial;}
+[dir="rtl"] .Contactdetails { font-family: 'Janna LT', DroidKufiRegular !important;}
 .Contactdetails strong {color: #cc0000;font-size: 12px; text-transform:uppercase;}
 .Contactdetails address strong {font-size: 20px !important;font-weight: normal;padding: 5px 0;display: block;}
+[dir="rtl"] .Contactdetails address strong {font-family: 'GE_SS_Medium', Arial !important;}
 .Contactdetails dt {color:#cc6600;  font-size: 18px;font-weight: normal;width: 150px!important;}
 .Contactdetails dd { font-size: 18px;font-weight: normal;  width: 190px!important; padding: 0 6px;}
+
+[dir="rtl"] .Contactdetails dd ,[dir="rtl"] .Contactdetails dt { font-family: "GE_SS_Medium", Arial !important;}
 .Contactdetails address {margin:0px !important;}
 .Contactdetails address p {padding:0 20px; font-size: 16px;}
 .Contactdetails hr ,.Contactdetails  .dl-horizontal {margin: 6px 0 !important;}

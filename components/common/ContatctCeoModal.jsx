@@ -65,14 +65,17 @@ const ContactCeoModal = ({ isOpen, onClose }) => {
       captcha: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Name is required"),
-      email: Yup.string().email("Invalid Email").required("Email is required"),
+      name: Yup.string().required(t("mandatory_field")),
+      email: Yup.string()
+        .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, t("invalid_email_contactus"))
+        .required(t("mandatory_field")),
+
       confirmEmail: Yup.string()
-        .oneOf([Yup.ref("email")], "Emails must match")
-        .required("Email Confirm is required"),
-      subject: Yup.string().required("Subject is required"),
-      message: Yup.string().required("Message is required"),
-      captcha: Yup.string().required("Captcha is required"),
+        .oneOf([Yup.ref("email"), null], "Emails must match")
+        .required("mandatory_field"),
+      subject: Yup.string().required(t('mandatory_field')),
+      message: Yup.string().required(t('mandatory_field')),
+      captcha: Yup.string().required(t('mandatory_field')),
     }),
     onSubmit: async (values, { setSubmitting, resetForm, setFieldError }) => {
       setStatusMessage({ success: "", error: "" });
@@ -96,8 +99,8 @@ const ContactCeoModal = ({ isOpen, onClose }) => {
 
         if (values.captcha.toUpperCase() !== captchaText) {
           setFieldError("captcha", t("captcha_validation_failed")); // Set Formik error
-          fetchCaptcha(); 
-          return; 
+          fetchCaptcha();
+          return;
         }
 
         const payload = {
@@ -119,7 +122,6 @@ const ContactCeoModal = ({ isOpen, onClose }) => {
         const result = await response.json();
 
         if (!response.ok) {
-          
           throw new Error(result.message || t("submission_failed"));
         }
 
@@ -133,7 +135,7 @@ const ContactCeoModal = ({ isOpen, onClose }) => {
       } catch (err) {
         setStatusMessage({ success: "", error: err.message });
         fetchCaptcha();
-        // refreshCaptcha(); 
+        // refreshCaptcha();
       } finally {
         setSubmitting(false);
       }
@@ -295,7 +297,7 @@ const ContactCeoModal = ({ isOpen, onClose }) => {
                             fontWeight: "bold",
                             letterSpacing: "7px",
                             fontStyle: "italic",
-                             fontFamily: "'Special Elite', monospace",
+                            fontFamily: "'Special Elite', monospace",
                             backgroundImage:
                               "url('/assets/images/captcha-bg.jpg')", // <-- fixed line
                             backgroundSize: "cover", // optional: ensure full coverage

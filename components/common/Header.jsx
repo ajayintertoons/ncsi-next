@@ -134,13 +134,13 @@ const Header = ({ onOpenModal }) => {
                   </a>
                   </div>
                   <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="0.5s">
-                     <a href="#" className='flex justify-center'>
+                     <a href="https://play.google.com/store/search?q=%22National%20Center%20for%20Statistics%22%20Oman&c=apps&hl=en" target="_blank" className='flex justify-center'>
                      {/* <i className="fab fa-android fa-3x header-icons icon-android"></i> */}
                      <IoLogoAndroid className='head-android-icon'/>
                   </a>
                   </div>
                   <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.4s" data-wow-duration="0.5s">
-                     <a href="#">
+                     <a href="mailto:info@ncsi.gov.om">
                      <i className="fab fa-at header-icons icon-windows"></i>
                   </a>
                   </div>
@@ -150,7 +150,7 @@ const Header = ({ onOpenModal }) => {
                   </a>
                   </div>
                   <div className="col col-2 text-center wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="0.5s">
-                     <a href="#">
+                     <a href="tel:80076274">
                      <i className="fas fa-headphones-alt header-icons icon-headphone"></i>
                   </a>
                   </div>
@@ -169,7 +169,7 @@ const Header = ({ onOpenModal }) => {
                   </div>
                   <div className="col col-2 text-center wow fadeInDown" data-wow-delay="1.1s" data-wow-duration="0.5s">
                      <a href="https://www.youtube.com/user/NCSIOman" target="_blank">
-                     <i className="fab fa-youtube header-icons icon-youtube"></i>
+                     <i className="fab fa-youtube header-icons icon-youtube" style={{padding: '7px 6px'}}></i>
                   </a>
                   </div>
                   <div className="col col-2 text-center wow fadeInDown" data-wow-delay="1.0s" data-wow-duration="0.5s">

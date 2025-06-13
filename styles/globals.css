@@ -9,6 +9,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GE_SS_Medium';
+  src: url('../public/assets/fonts/GE-SS-Medium/GE_SS_Text_Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 /* :root {
   --background: #ffffff;
