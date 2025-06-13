@@ -107,11 +107,13 @@ const SurveyRequest = () => {
     { label: "other", value: "Other" },
   ];
   const RequesterOptions = [
-    {label:"governmental_institute", value: "Governmental Institute" },
-    {label:"private_institute", value: "Private Institute" },
-    {label:"institute_government_private", value: "Institute (Government /Private)" },
-    {label:"individual", value: "individual" }
-    
+    { label: "governmental_institute", value: "Governmental Institute" },
+    { label: "private_institute", value: "Private Institute" },
+    {
+      label: "institute_government_private",
+      value: "Institute (Government /Private)",
+    },
+    { label: "individual", value: "individual" },
   ];
   const notificationPre = [
     { id: "notification_email", value: "Email", label: "email" },
@@ -265,6 +267,13 @@ const SurveyRequest = () => {
 
   const formRef = useRef(null);
 
+  const officialLetterRef = useRef(null);
+  const questionnaireRef = useRef(null);
+  const listOfBenef = useRef(null);
+  const financialSponsors = useRef(null);
+  const objectiveStudy = useRef(null);
+  const otherAttachments = useRef(null);
+  
   const handleExportPDF = () => {
     console.log("Exporting to PDF...");
     const printContents = formRef.current.innerHTML;
@@ -305,6 +314,10 @@ const SurveyRequest = () => {
       sampleRepresentation: "",
       officialLetter: null,
       questionnaire: null,
+      beneficiaries: null,
+      studyObjective: null,
+      sponsors: null,
+      attachments: null,
       dataAvailability: "",
       dataCollectionMethod: {
         faceToFace: false,
@@ -363,15 +376,11 @@ const SurveyRequest = () => {
       }),
       sampleRepresentation: Yup.string().required("field_required"),
       dataAvailability: Yup.string().required("field_required"),
-      notificationPreference: Yup.string().required(
-        "field_required"
-      ),
+      notificationPreference: Yup.string().required("field_required"),
 
       dataCollectionMethod: Yup.object()
-        .test(
-          "at-least-one",
-          "field_required",
-          (value) => Object.values(value || {}).some((v) => v === true)
+        .test("at-least-one", "field_required", (value) =>
+          Object.values(value || {}).some((v) => v === true)
         )
         .required(),
       otherSpecify: Yup.string().when("dataCollectionMethod.other", {
@@ -468,6 +477,12 @@ const SurveyRequest = () => {
           error: "",
         });
         resetForm();
+        if (officialLetterRef.current) officialLetterRef.current.value = "";
+        if (questionnaireRef.current) questionnaireRef.current.value = "";
+        if (listOfBenef.current) listOfBenef.current.value = "";
+        if (financialSponsors.current) financialSponsors.current.value = "";
+        if (objectiveStudy.current) objectiveStudy.current.value = "";
+        if (otherAttachments.current) otherAttachments.current.value = "";
       } catch (err) {
         setStatusMessage({ success: "", error: err.message });
       } finally {
@@ -528,7 +543,7 @@ const SurveyRequest = () => {
                 <div className="col-sm-8">
                   <table>
                     <tbody>
-                      <tr >
+                      <tr>
                         {options.map(({ value, label }, index) => (
                           <td key={index}>
                             <input
@@ -550,7 +565,7 @@ const SurveyRequest = () => {
                   </table>
                   {formik.touched.subjectOfSurvey &&
                     formik.errors.subjectOfSurvey && (
-                      <span className="RequiredAstr">
+                      <span className="RequiredAstr font-janna">
                         {t(formik.errors.subjectOfSurvey)}
                       </span>
                     )}
@@ -567,36 +582,30 @@ const SurveyRequest = () => {
                 <div className="col-sm-8">
                   <table>
                     <tbody>
-                     
-                        <tr >
-                          {RequesterOptions.map(({ value, label }, index) => {
-                              
-                              return (
-                                <td key={index}>
-                                  <input
-                                    type="radio"
-                                    id={`requester-${index}`}
-                                    name="requester"
-                                    value={value}
-                                    checked={
-                                      formik.values.requester === value
-                                    }
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                  />
-                                  <label htmlFor={`requester-${index}`}>
-                                    {t(label)}
-                                  </label>
-                                </td>
-                              );
-                            }
-                          )}
-                        </tr>
-                      
+                      <tr>
+                        {RequesterOptions.map(({ value, label }, index) => {
+                          return (
+                            <td key={index}>
+                              <input
+                                type="radio"
+                                id={`requester-${index}`}
+                                name="requester"
+                                value={value}
+                                checked={formik.values.requester === value}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                              />
+                              <label htmlFor={`requester-${index}`}>
+                                {t(label)}
+                              </label>
+                            </td>
+                          );
+                        })}
+                      </tr>
                     </tbody>
                   </table>
                   {formik.touched.requester && formik.errors.requester && (
-                    <span className="RequiredAstr">
+                    <span className="RequiredAstr font-janna">
                       {t(formik.errors.requester)}
                     </span>
                   )}
@@ -932,7 +941,9 @@ const SurveyRequest = () => {
                     </tbody>
                   </table>
 
-                  <span className="lbl text-[10px] font-janna">{t("sample_size")}</span>
+                  <span className="lbl text-[10px] font-janna">
+                    {t("sample_size")}
+                  </span>
                   <input
                     id="txt_CoverageSample"
                     type="number"
@@ -1067,7 +1078,7 @@ const SurveyRequest = () => {
                         },
                         {
                           name: "selfInterpolation",
-                          label: t("self_interpolation"), 
+                          label: t("self_interpolation"),
                         },
                         { name: "phoneCalls", label: t("phone_calls") },
                         { name: "other", label: t("other") },
@@ -1099,7 +1110,9 @@ const SurveyRequest = () => {
                       </span>
                     )}
 
-                  <span className="lbl text-[10px] font-janna">{t("other_specify")}</span>
+                  <span className="lbl text-[10px] font-janna">
+                    {t("other_specify")}
+                  </span>
                   <input
                     name="otherSpecify"
                     type="text"
@@ -1197,6 +1210,7 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
+                    ref={officialLetterRef}
                     type="file"
                     id="fu_OfficialLetter"
                     className="file_1 txtF"
@@ -1234,9 +1248,14 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
+                    ref={objectiveStudy}
                     type="file"
-                    id="fu_OfficialLetter"
+                    id="fu_Objec"
                     className="file_1 txtF"
+                     onChange={(e) => {
+                      const file = e.currentTarget.files[0];
+                      formik.setFieldValue("studyObjective", file);
+                    }}
                     // onChange={handleOfficialLetterChange}
                     accept=".pdf,.docx,.xlsx,image/*"
                   />
@@ -1264,7 +1283,8 @@ const SurveyRequest = () => {
                 <div className="col-sm-8">
                   <input
                     type="file"
-                    id="fu_OfficialLetter"
+                    ref={questionnaireRef}
+                    id="fu_que"
                     className="file_1 txtF"
                     onChange={(e) => {
                       const file = e.currentTarget.files[0];
@@ -1289,10 +1309,15 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
+                    ref={financialSponsors}
                     type="file"
                     id="fu_StudyObjective"
                     className="file_1 txtF"
                     // onChange={handleStudyObjectiveChange}
+                     onChange={(e) => {
+                      const file = e.currentTarget.files[0];
+                      formik.setFieldValue("sponsors", file);
+                    }}
                     accept=".pdf,.docx,.xlsx,image/*"
                     // key={
                     //   studyObjectiveFile
@@ -1312,10 +1337,15 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
+                  ref={listOfBenef}
                     type="file"
                     id="fu_OfficialLetter"
                     className="file_1 txtF"
                     // onChange={handleOfficialLetterChange}
+                     onChange={(e) => {
+                      const file = e.currentTarget.files[0];
+                      formik.setFieldValue("beneficiaries", file);
+                    }}
                     accept=".pdf,.docx,.xlsx,image/*"
                   />
 
@@ -1338,10 +1368,15 @@ const SurveyRequest = () => {
                 </div>
                 <div className="col-sm-8">
                   <input
+                  ref={otherAttachments}
                     type="file"
                     id="fu_StudyObjective"
                     className="file_1 txtF"
                     // onChange={handleStudyObjectiveChange}
+                     onChange={(e) => {
+                      const file = e.currentTarget.files[0];
+                      formik.setFieldValue("attachments", file);
+                    }}
                     accept=".pdf,.docx,.xlsx,image/*"
                   />
                 </div>
@@ -1426,6 +1461,7 @@ const SurveyRequest = () => {
 
               <a
                 className="submitBtn"
+                style={{ padding: "9px 15px" }}
                 href="#"
                 onClick={handleExportPDF}
                 title="Export PDF"

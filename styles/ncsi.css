@@ -462,8 +462,8 @@ label {font-size:12px;}
 .Froms .Textform {margin:0 0 10px 0; position:relative;}
 .Textform > table {width: auto !important;}
 .Froms .Astr , .Froms .RequiredAstr , .Froms .RequiredAstrMULTL,.Froms .RadCaptcha > span {font-size:11px !important; color:red;}
-.Froms .RequiredAstr , .Froms .RequiredAstrM/*,.Froms .RadCaptcha > span*/{position: absolute;bottom: -10px;left: 3px; padding:0px 15px;}
-[dir = 'rtl'] .Froms .RequiredAstr , .Froms .RequiredAstrM/*,.Froms .RadCaptcha > span*/{right: 3px;}
+.Froms .RequiredAstr , .Froms .RequiredAstrM/*,.Froms .RadCaptcha > span*/{position: absolute;bottom: -15px;left: 3px; padding:0px 15px;}
+[dir = 'rtl'] .Froms .RequiredAstr , .Froms .RequiredAstrM/*,.Froms .RadCaptcha > span*/{right: 3px; font-family: 'Janna LT', DroidKufiRegular !important;}
 .alert .RequiredAstr {position:relative !important; top:auto !important; left:auto !important;}
 .Froms .RequiredAstrattach {bottom: -20px;left: 6px;}
 .Froms .RequiredAstrDub {top: 36px !important;}
@@ -1784,15 +1784,16 @@ ul.ListResult a:hover {color:#990000; text-decoration:underline;}
     .regFrom .multiUpload .file-input-wrapper{width:100%;border:none!important;border-top:none!important;border-radius:0;text-align:left;}
     .regFrom .multiUpload #btnGetFile{font: bold 10px Gill Sans MT, Arial;color: #fff !important;background: #00a99d !important;border: none;border-bottom: solid 2px #006666;padding: 12px;text-transform: uppercase;border-radius:5px;width:auto;height:auto;}
     .regFrom .multiUpload #btnClear{font: bold 10px Gill Sans MT, Arial;color: #fff !important;background: #cc0000 !important;border: none;border-bottom: solid 2px #ac0000;padding: 12px;text-transform: uppercase;border-radius:5px;width:auto;height:auto;margin-left:5px;}
-    .regFrom .btnsWrapper{text-align:right;margin-top:20px;}
-    [dir="rtl"] .regFrom .btnsWrapper{text-align:left;}
+    .regFrom .btnsWrapper{text-align:right;margin-top:65px;}
+    /* [dir="rtl"] .regFrom .btnsWrapper{text-align:left;} */
 
     /*.regFrom input[type=checkbox] {   display:none}
     .regFrom input[type=checkbox] + label {background:transparent url('/images/chkboxBG.png') no-repeat right 0px;min-height:20px;padding-right: 25px;padding-top: 2px;margin: 0 5px;}
     .regFrom input[type=checkbox]:checked + label { background:transparent url('/images/chkboxBG.png') no-repeat right -63px;}*/
     .regFrom input[type=radio]{margin-top:0px;}
 
-    .regFrom .cancelBtn , .regFrom .submitBtn {font: bold 10px Gill Sans MT, Arial;color: #fff !important;border: none;padding: 12px;text-transform: uppercase;border-radius:5px; display:inline-block;}
+    .regFrom .cancelBtn , .regFrom .submitBtn {font: bold 10px 'Gill Sans MT', Arial; font-family: 'Janna LT',DroidKufiRegular !important;color: #fff !important;border: none;padding: 9px 10px;text-transform: uppercase;border-radius:5px; display:inline-block;}
+    /* [dir="rtl"] .regFrom .cancelBtn , .regFrom .submitBtn {font-family: 'Janna LT', DroidKufiRegular !important;padding: 10px 14px;} */
     .regFrom .submitBtn {background: #00a99d !important;border-bottom: solid 2px #006666!important;}
     .regFrom .cancelBtn {background: #666666 !important;border-bottom: solid 2px #333333!important;}
     /*.regFrom .ms-dtinput input,.regFrom .ms-dttimeinput input ,.regFrom .ms-dtinput select,.regFrom .ms-dttimeinput select{width:auto!important;}*/

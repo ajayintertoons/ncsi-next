@@ -16,7 +16,7 @@ import '../styles/ncsi.css';
 import '../styles/responsive.css';
 import '../public/assets/fonts/language-button/style.css';
 
-import '../public/assets/fonts/droidKufi/DroidKufiRegular.css';
+// import '../public/assets/fonts/droidKufi/DroidKufiRegular.css';
 import '../public/assets/fonts/english-and-arabic-fonts/stylesheet.css';
 import '../public/assets/fonts/home-icons/style.css';
 import '../public/assets/css/style.css';

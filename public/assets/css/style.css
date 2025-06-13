@@ -332,6 +332,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
  margin-top: -5px;
      line-height: 30px;
 }
+[dir="rtl"] .row.donut-chart-legents{
+  direction: ltr;
+}
 .donut-chart-continer{
   min-width: 100%; 
   height: 200px !important; 
@@ -607,6 +610,11 @@ margin-top: 15px;
     margin-left: 5px;
     color: #ffffff;
     z-index: 9999;
+}
+
+[dir="rtl"] .carousel-share{
+  margin-left: 0px;
+  margin-right: 5px;
 }
 
 /*login*/

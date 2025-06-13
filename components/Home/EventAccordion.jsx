@@ -4,8 +4,12 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+
 const EventAccordion = ({ eventData = [] }) => {
   const { t } = useTranslation("common");
+      const { locale } = useRouter();
+
+      const eventsUrl = locale === 'ar' ? '/ar/events' : '/events';
 
   const router = useRouter();
   const isRTL = router.locale === "ar";
@@ -20,7 +24,7 @@ const EventAccordion = ({ eventData = [] }) => {
           const month = eventDate.toLocaleString("default", { month: "long" }); // "June", etc.
 
           return (
-            <Link href="/events" key={index}>
+            <Link href={eventsUrl} >
               <div className="title h-[68px] flex justify-center cursor-pointer hover:bg-gray-100">
                 <div className="w-full flex justify-between items-center">
                   <div className="flex gap-2 items-center">
@@ -53,16 +57,18 @@ const EventAccordion = ({ eventData = [] }) => {
 
       {/* Right Column */}
       <div className="bookletWrapWrap">
+        <Link href={eventsUrl}>
         <div className="bookletWrap">
-          <span className="text-lg font-semibold block">{t("events")}</span>
-          <h4 className="text-2xl font-bold m-0">{t("and")}</h4>
-          <span className="text-lg font-semibold block">{t("occasions")}</span>
+          <span className="text-[18px] font-semibold block">{t("events")}</span>
+          <h4 className="text-[18px] font-bold m-0">{t("and")}</h4>
+          <span className="text-[18px] font-semibold block">{t("occasions")}</span>
           <img
             src="assets/images/spiral.png"
             alt="spiral binding"
             className="spiralbind"
           />
         </div>
+        </Link>
       </div>
     </div>
   );

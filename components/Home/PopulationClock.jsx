@@ -58,7 +58,7 @@ const PopulationClock = ({ populationData }) => {
     {
       name: t("omanis"),
       y: Number(((omanis / total) * 100).toFixed(1)),
-      color: "#284a8c",
+      color: "#0F3173",
       count: omanis.toLocaleString("en-US"),
     },
     {
@@ -133,7 +133,7 @@ const PopulationClock = ({ populationData }) => {
                       <i className="fas fa-caret-up"></i>
                     </a>
                     <div>
-                      <span className="text">{weekdayName}</span>
+                      <span className="text">{t(weekdayName)}</span>
                       <span className="num">{dayNumber}</span>
                     </div>
                     <a href="" onClick={(e) => { e.preventDefault(); changeDate("day", -1) }} className="btn-arrow btn-down">
@@ -147,7 +147,7 @@ const PopulationClock = ({ populationData }) => {
                       <i className="fas fa-caret-up"></i>
                     </a>
                     <div>
-                      <span className="text">{monthName}</span>&nbsp;
+                      <span className="text">{t(monthName)}</span>&nbsp;
                       <span className="num">{monthNumber}</span>
                     </div>
                     <a href="" onClick={(e) => { e.preventDefault(); changeDate("month", -1)}} className="btn-arrow btn-down">
